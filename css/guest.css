@@ -51,8 +51,8 @@ html[data-bs-theme="light"] .color-theme-svg {
 }
 
 html[data-bs-theme="dark"] .color-theme-svg {
-    color: rgb(0, 0, 0);
-    background-color: var(--bs-dark);
+    color: #355E3B;
+    background-color: #355E3B;
 }
 
 html[data-bs-theme="light"] .bg-light-dark {
@@ -60,7 +60,7 @@ html[data-bs-theme="light"] .bg-light-dark {
 }
 
 html[data-bs-theme="dark"] .bg-light-dark {
-    background-color: rgb(var(--bs-dark-rgb));
+    background-color: #355E3B;
 }
 
 html[data-bs-theme="light"] .bg-white-black {
@@ -68,9 +68,13 @@ html[data-bs-theme="light"] .bg-white-black {
 }
 
 html[data-bs-theme="dark"] .bg-white-black {
-    background-color: rgb(var(--bs-black-rgb));
+    background:
+    linear-gradient(
+        180deg,
+        #2B4A38 0%,
+        #355E3B 100%
+    );
 }
-
 .bg-cover-home {
     width: 100%;
     height: 100%;
@@ -267,4 +271,64 @@ img {
 }
 main {
     padding-bottom: 75px;
+}
+/* =========================
+   LIGHT MODE NAVBAR
+========================= */
+html[data-bs-theme="light"] #navbar-menu,
+html[data-bs-theme="auto"] #navbar-menu {
+    background: rgba(255,248,240,0.94) !important;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 -8px 25px rgba(80,45,20,0.10);
+
+    border-color:
+        rgba(178,112,54,0.12) !important;
+}
+
+/* Text/Icon */
+html[data-bs-theme="light"] #navbar-menu .nav-link,
+html[data-bs-theme="auto"] #navbar-menu .nav-link {
+    color: rgba(122,85,51,0.78) !important;
+}
+
+/* Active */
+html[data-bs-theme="light"] #navbar-menu .nav-link.active,
+html[data-bs-theme="light"] #navbar-menu .nav-link:hover,
+html[data-bs-theme="auto"] #navbar-menu .nav-link.active,
+html[data-bs-theme="auto"] #navbar-menu .nav-link:hover {
+    color: #B27036 !important;
+}
+
+/* =========================
+   DARK MODE NAVBAR
+========================= */
+html[data-bs-theme="dark"] #navbar-menu {
+    background: rgba(43,74,56,0.94) !important;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 -8px 25px rgba(18,40,30,0.28);
+
+    border-color:
+        rgba(221,231,221,0.10) !important;
+}
+
+/* Text/Icon */
+html[data-bs-theme="dark"] #navbar-menu .nav-link {
+    color: rgba(240,235,225,0.75) !important;
+}
+
+/* Active */
+html[data-bs-theme="dark"] #navbar-menu .nav-link.active,
+html[data-bs-theme="dark"] #navbar-menu .nav-link:hover {
+    color: #EFDCC8 !important;
+}
+
+/* Icon inherit */
+#navbar-menu i {
+    color: inherit !important;
 }
