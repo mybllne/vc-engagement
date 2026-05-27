@@ -1,0 +1,270 @@
+@import url("common.css");
+@import url("animation.css");
+
+html {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.with-scrollbar {
+    scrollbar-width: auto !important;
+    -ms-overflow-style: auto !important;
+}
+
+.font-esthetic {
+    font-family: 'Sacramento', cursive !important;
+}
+
+.font-arabic {
+    font-family: 'Noto Naskh Arabic', serif !important;
+}
+
+.img-center-crop {
+    width: 13rem;
+    height: 13rem;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+html[data-bs-theme="dark"] .btn-transparent {
+    background-color: rgba(var(--bs-dark-rgb), 0.5) !important;
+    backdrop-filter: blur(0.5rem);
+}
+
+html[data-bs-theme="light"] .btn-transparent {
+    background-color: rgba(var(--bs-light-rgb), 0.5) !important;
+    backdrop-filter: blur(0.5rem);
+}
+
+.loading-page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1056;
+}
+
+html[data-bs-theme="light"] .color-theme-svg {
+    color: rgb(255, 255, 255);
+    background-color: var(--bs-light);
+}
+
+html[data-bs-theme="dark"] .color-theme-svg {
+    color: rgb(0, 0, 0);
+    background-color: var(--bs-dark);
+}
+
+html[data-bs-theme="light"] .bg-light-dark {
+    background-color: rgb(var(--bs-light-rgb));
+}
+
+html[data-bs-theme="dark"] .bg-light-dark {
+    background-color: rgb(var(--bs-dark-rgb));
+}
+
+html[data-bs-theme="light"] .bg-white-black {
+    background-color: rgb(var(--bs-white-rgb));
+}
+
+html[data-bs-theme="dark"] .bg-white-black {
+    background-color: rgb(var(--bs-black-rgb));
+}
+
+.bg-cover-home {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(0.5turn, transparent, black 40%, black 60%, transparent);
+}
+
+.width-loading {
+    width: 25%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .width-loading {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .width-loading {
+        width: 75%;
+    }
+}
+
+svg {
+    display: block;
+    line-height: 0;
+    shape-rendering: geometricPrecision;
+    backface-visibility: hidden;
+}
+
+.svg-wrapper {
+    overflow: hidden !important;
+    transform: translateZ(0) !important;
+}
+
+.no-gap-bottom {
+    margin-bottom: -0.75rem !important;
+}
+
+.autumn-icon-float {
+    animation: autumnIconFloat 3s ease-in-out infinite;
+}
+
+.autumn-soft-float {
+    animation: autumnSoftFloat 4s ease-in-out infinite;
+}
+
+@keyframes autumnIconFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(18deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(-8deg);
+    }
+}
+
+@keyframes autumnSoftFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.event-detail-wrap {
+    width: 100%;
+    max-width: 700px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.event-detail-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(178,112,54,0.10);
+    padding: 2.5rem;
+}
+
+@media screen and (max-width: 576px) {
+    .event-detail-wrap {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .event-detail-card {
+        padding: 2rem 1.4rem;
+        border-radius: 28px !important;
+    }
+}
+
+/* ================================
+   GLOBAL RESPONSIVE FIX
+================================ */
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #f3e6d7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main invitation wrapper */
+#root {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #FFF8F0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(0,0,0,0.10);
+}
+
+/* All sections fit screen */
+section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background images always fit */
+section img,
+.bg-cover-home {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive containers */
+.container,
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Fix text overflow */
+h1, h2, h3, h4, h5, h6, p {
+    word-wrap: break-word;
+}
+
+/* Images responsive */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Couple images */
+.rounded-circle {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Desktop centered phone layout */
+@media screen and (min-width: 768px) {
+
+    body {
+        background:
+        linear-gradient(
+            180deg,
+            #f6ede4 0%,
+            #ead8c5 100%
+        );
+    }
+
+    #root {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 576px) {
+
+    #root {
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+main {
+    padding-bottom: 75px;
+}
